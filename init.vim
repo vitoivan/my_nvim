@@ -13,24 +13,32 @@ Plug 'vhakulinen/gnvim'
 Plug '42Paris/42header'
 Plug 'pandark/42header.vim'
 Plug 'andweeb/presence.nvim'
+Plug 'nullvoxpopuli/coc-ember', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 colorscheme nord
 source $HOME/.config/nvim/plug-config/coc.vim
 
 nnoremap ,m :-1read $HOME/.config/nvim/.snippets/main.c<CR>2j
-nnoremap <c-q> :wq<CR>
+nnoremap <c-q> :q<CR>
 nnoremap <c-n> :NERDTreeFocus<CR>
 nnoremap i i<Right>
 map <C-S-V> "+gP
 map <S-Insert> "+gP
 map <C-S-C> "+y
 nmap <f1> :FortyTwoHeader<CR>
-inoremap ( ()<Left>
 inoremap { {}<Left>
-inoremap " ""<Left>
-map <C-/> I//<Esc>;
+inoremap ( ()<Left>
 map ;; $i;<Esc>
+map <c-t> :tabnew<CR>
+map <c-1> 1gt
+map <c-2> 2gt
+map <c-3> 3gt
+map <c-4> 4gt
+map <c-5> 5gt
+map <c-.> :tabn<CR>
+map <c-,> :tabp<CR>
+tnoremap <Esc> <C-\><C-n>
 
 " General options
 let g:presence_auto_update         = 1
